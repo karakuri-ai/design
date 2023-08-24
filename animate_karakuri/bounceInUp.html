@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>KARAKURI Animate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="img/favicon.ico">
+  <!-- layout -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/set.css" />
+  <link rel="stylesheet" href="css/button.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/container.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <!-- animate css-->
+  <link rel="stylesheet" href="css/animate.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-left">
+      <h1>
+        <a href="index.html"><img src="img/logo.svg" class="logo" alt="" /></a>
+      </h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="slideInDown.html">Slide</a></li>
+          <li><a href="zoomIn.html">Zoom</a></li>
+          <li><a href="fadeIn.html">Fade</a></li>
+          <li class="active"><a href="bounceIn.html">Bounce</a></li>
+          <li><a href="flash.html">Attention</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="demo">
+    <div class="demo-container">
+      <div class="demo-warpper">
+        <div class="demo-menu">
+          <div class="menu-bg">
+            <div class="animate-area">
+              <div class="animate-title">
+                <p class="label">Bounce</p>
+              </div>
+              <div class="animate-list">
+                <a href="bounceIn.html" class="animate-name">bounceIn</a>
+              </div>
+              <div class="animate-list">
+                <a href="bounceInDown.html" class="animate-name">bounceInDown</a>
+              </div>
+              <div class="animate-list">
+                <a href="bounceInLeft.html" class="animate-name">bounceInLeft</a>
+              </div>
+              <div class="animate-list">
+                <a href="bounceInRight.html" class="animate-name">bounceInRight</a>
+              </div>
+              <div class="animate-list active">
+                <a href="bounceInUp.html" class="animate-name">bounceInUp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-animate">
+          <div class="animate-bg">
+            <div class="animate-layout">
+              <div class="animate-container">
+
+                <div class="info-area">
+                  <button id="openModalBtn" class="openModal">Sample Demo</button>
+
+                  <div class="modal" id="myModal">
+                    <div class="modal-content animate animate__bounceInUp">
+                      <span class="close-btn" id="closeModalBtn">&times;</span>
+                      <h2>Sample</h2>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <pre class="input-layout">
+<code class="animate-input">
+@keyframes bounceInUp {
+from,
+60%,
+75%,
+90%,
+to {
+animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+from {
+opacity: 0;
+transform: translate3d(0, 3000px, 0) scaleY(5);
+}
+
+60% {
+opacity: 1;
+transform: translate3d(0, -20px, 0) scaleY(0.9);
+}
+
+75% {
+transform: translate3d(0, 10px, 0) scaleY(0.95);
+}
+
+90% {
+transform: translate3d(0, -5px, 0) scaleY(0.985);
+}
+
+to {
+transform: translate3d(0, 0, 0);
+}
+}
+
+.bounceInUp {
+animation-name: bounceInUp;
+}
+</code>
+          </pre>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modal = document.getElementById('myModal');
+
+    openModalBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modal.classList.add('fade-in');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.remove('fade-in');
+      modal.classList.add('fade-out');
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modal.classList.remove('fade-out');
+      }, 300);
+    });
+  </script>
+</body>
+
+</html>

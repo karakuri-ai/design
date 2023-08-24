@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>KARAKURI Animate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="img/favicon.ico">
+  <!-- layout -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/set.css" />
+  <link rel="stylesheet" href="css/button.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/container.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <!-- animate css-->
+  <link rel="stylesheet" href="css/animate.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-left">
+      <h1>
+        <a href="index.html"><img src="img/logo.svg" class="logo" alt="" /></a>
+      </h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="slideInDown.html">Slide</a></li>
+          <li class="active"><a href="zoomIn.html">Zoom</a></li>
+          <li><a href="fadeIn.html">Fade</a></li>
+          <li><a href="bounceIn.html">Bounce</a></li>
+          <li><a href="flash.html">Attention</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="demo">
+    <div class="demo-container">
+      <div class="demo-warpper">
+        <div class="demo-menu">
+          <div class="menu-bg">
+            <div class="animate-area">
+              <div class="animate-title">
+                <p class="label">Zoom</p>
+              </div>
+              <div class="animate-list">
+                <a href="zoomIn.html" class="animate-name">zoomIn</a>
+              </div>
+              <div class="animate-list">
+                <a href="zoomInDown.html" class="animate-name">zoomInDown</a>
+              </div>
+              <div class="animate-list active">
+                <a href="zoomInLeft.html" class="animate-name">zoomInLeft</a>
+              </div>
+              <div class="animate-list">
+                <a href="zoomInRight.html" class="animate-name">zoomInRight</a>
+              </div>
+              <div class="animate-list">
+                <a href="zoomInUp.html" class="animate-name">zoomInUp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-animate">
+          <div class="animate-bg">
+            <div class="animate-layout">
+              <div class="animate-container">
+
+                <div class="info-area">
+                  <button id="openModalBtn" class="openModal">Sample Demo</button>
+
+                  <div class="modal" id="myModal">
+                    <div class="modal-content animate animate__zoomInLeft">
+                      <span class="close-btn" id="closeModalBtn">&times;</span>
+                      <h2>Sample</h2>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <pre class="input-layout">
+<code class="animate-input">
+@keyframes zoomInLeft {
+from {
+opacity: 0;
+transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+60% {
+opacity: 1;
+transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+}
+
+.zoomInLeft {
+animation-name: zoomInLeft;
+}
+</code>
+          </pre>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modal = document.getElementById('myModal');
+
+    openModalBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modal.classList.add('fade-in');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.remove('fade-in');
+      modal.classList.add('fade-out');
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modal.classList.remove('fade-out');
+      }, 300);
+    });
+  </script>
+</body>
+
+</html>
